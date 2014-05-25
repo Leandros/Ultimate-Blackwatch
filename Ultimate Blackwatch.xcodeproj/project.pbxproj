@@ -13,13 +13,18 @@
 		0CEB84CB19320DC60052BDEC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0CEB84C919320DC60052BDEC /* InfoPlist.strings */; };
 		0CEB84CD19320DC60052BDEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CEB84CC19320DC60052BDEC /* main.m */; };
 		0CEB84D119320DC60052BDEC /* AGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CEB84D019320DC60052BDEC /* AGAppDelegate.m */; };
-		0CEB84D719320DC60052BDEC /* AGRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CEB84D619320DC60052BDEC /* AGRootViewController.m */; };
 		0CEB84D919320DC60052BDEC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CEB84D819320DC60052BDEC /* Images.xcassets */; };
 		0CEB84E019320DC60052BDEC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CEB84DF19320DC60052BDEC /* XCTest.framework */; };
 		0CEB84E119320DC60052BDEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CEB84C019320DC60052BDEC /* Foundation.framework */; };
 		0CEB84E219320DC60052BDEC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CEB84C419320DC60052BDEC /* UIKit.framework */; };
 		0CEB84EA19320DC60052BDEC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0CEB84E819320DC60052BDEC /* InfoPlist.strings */; };
 		0CEB84EC19320DC60052BDEC /* Ultimate_BlackwatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CEB84EB19320DC60052BDEC /* Ultimate_BlackwatchTests.m */; };
+		0CEB84F9193218180052BDEC /* AGRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CEB84F8193218180052BDEC /* AGRootViewController.m */; };
+		0CEB84FD193218600052BDEC /* AGWatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CEB84FB193218600052BDEC /* AGWatchViewController.m */; };
+		0CEB8500193218770052BDEC /* AGWatchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CEB84FF193218770052BDEC /* AGWatchViewController.xib */; };
+		0CEB850419321E620052BDEC /* UIColor+Stuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CEB850319321E620052BDEC /* UIColor+Stuff.m */; };
+		0CEB8509193268FD0052BDEC /* AGHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CEB8508193268FD0052BDEC /* AGHelper.m */; };
+		0CEB85161932719A0052BDEC /* AGNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CEB85151932719A0052BDEC /* AGNavigationBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,14 +48,23 @@
 		0CEB84CE19320DC60052BDEC /* Ultimate Blackwatch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ultimate Blackwatch-Prefix.pch"; sourceTree = "<group>"; };
 		0CEB84CF19320DC60052BDEC /* AGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGAppDelegate.h; sourceTree = "<group>"; };
 		0CEB84D019320DC60052BDEC /* AGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGAppDelegate.m; sourceTree = "<group>"; };
-		0CEB84D519320DC60052BDEC /* AGRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGRootViewController.h; sourceTree = "<group>"; };
-		0CEB84D619320DC60052BDEC /* AGRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGRootViewController.m; sourceTree = "<group>"; };
 		0CEB84D819320DC60052BDEC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0CEB84DE19320DC60052BDEC /* Ultimate BlackwatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ultimate BlackwatchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CEB84DF19320DC60052BDEC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		0CEB84E719320DC60052BDEC /* Ultimate BlackwatchTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Ultimate BlackwatchTests-Info.plist"; sourceTree = "<group>"; };
 		0CEB84E919320DC60052BDEC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0CEB84EB19320DC60052BDEC /* Ultimate_BlackwatchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Ultimate_BlackwatchTests.m; sourceTree = "<group>"; };
+		0CEB84F7193218180052BDEC /* AGRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGRootViewController.h; sourceTree = "<group>"; };
+		0CEB84F8193218180052BDEC /* AGRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGRootViewController.m; sourceTree = "<group>"; };
+		0CEB84FA193218600052BDEC /* AGWatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGWatchViewController.h; sourceTree = "<group>"; };
+		0CEB84FB193218600052BDEC /* AGWatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGWatchViewController.m; sourceTree = "<group>"; };
+		0CEB84FF193218770052BDEC /* AGWatchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGWatchViewController.xib; sourceTree = "<group>"; };
+		0CEB850219321E620052BDEC /* UIColor+Stuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Stuff.h"; sourceTree = "<group>"; };
+		0CEB850319321E620052BDEC /* UIColor+Stuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Stuff.m"; sourceTree = "<group>"; };
+		0CEB8507193268FD0052BDEC /* AGHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGHelper.h; sourceTree = "<group>"; };
+		0CEB8508193268FD0052BDEC /* AGHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGHelper.m; sourceTree = "<group>"; };
+		0CEB85141932719A0052BDEC /* AGNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGNavigationBar.h; sourceTree = "<group>"; };
+		0CEB85151932719A0052BDEC /* AGNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGNavigationBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,10 +124,12 @@
 		0CEB84C619320DC60052BDEC /* Ultimate Blackwatch */ = {
 			isa = PBXGroup;
 			children = (
+				0CEB850A19326E3F0052BDEC /* CustomViews */,
+				0CEB850119321E620052BDEC /* Utils */,
+				0CEB84F5193218020052BDEC /* Layouts */,
+				0CEB84F6193218020052BDEC /* ViewController */,
 				0CEB84CF19320DC60052BDEC /* AGAppDelegate.h */,
 				0CEB84D019320DC60052BDEC /* AGAppDelegate.m */,
-				0CEB84D519320DC60052BDEC /* AGRootViewController.h */,
-				0CEB84D619320DC60052BDEC /* AGRootViewController.m */,
 				0CEB84D819320DC60052BDEC /* Images.xcassets */,
 				0CEB84C719320DC60052BDEC /* Supporting Files */,
 			);
@@ -147,6 +163,45 @@
 				0CEB84E819320DC60052BDEC /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0CEB84F5193218020052BDEC /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				0CEB84FF193218770052BDEC /* AGWatchViewController.xib */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
+		0CEB84F6193218020052BDEC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0CEB84F7193218180052BDEC /* AGRootViewController.h */,
+				0CEB84F8193218180052BDEC /* AGRootViewController.m */,
+				0CEB84FA193218600052BDEC /* AGWatchViewController.h */,
+				0CEB84FB193218600052BDEC /* AGWatchViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		0CEB850119321E620052BDEC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0CEB850219321E620052BDEC /* UIColor+Stuff.h */,
+				0CEB850319321E620052BDEC /* UIColor+Stuff.m */,
+				0CEB8507193268FD0052BDEC /* AGHelper.h */,
+				0CEB8508193268FD0052BDEC /* AGHelper.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		0CEB850A19326E3F0052BDEC /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				0CEB85141932719A0052BDEC /* AGNavigationBar.h */,
+				0CEB85151932719A0052BDEC /* AGNavigationBar.m */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CEB84D919320DC60052BDEC /* Images.xcassets in Resources */,
+				0CEB8500193218770052BDEC /* AGWatchViewController.xib in Resources */,
 				0CEB84CB19320DC60052BDEC /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,9 +302,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CEB84FD193218600052BDEC /* AGWatchViewController.m in Sources */,
+				0CEB85161932719A0052BDEC /* AGNavigationBar.m in Sources */,
 				0CEB84D119320DC60052BDEC /* AGAppDelegate.m in Sources */,
-				0CEB84D719320DC60052BDEC /* AGRootViewController.m in Sources */,
+				0CEB850419321E620052BDEC /* UIColor+Stuff.m in Sources */,
+				0CEB84F9193218180052BDEC /* AGRootViewController.m in Sources */,
 				0CEB84CD19320DC60052BDEC /* main.m in Sources */,
+				0CEB8509193268FD0052BDEC /* AGHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +505,7 @@
 				0CEB84F119320DC60052BDEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0CEB84F219320DC60052BDEC /* Build configuration list for PBXNativeTarget "Ultimate BlackwatchTests" */ = {
 			isa = XCConfigurationList;
@@ -453,6 +514,7 @@
 				0CEB84F419320DC60052BDEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

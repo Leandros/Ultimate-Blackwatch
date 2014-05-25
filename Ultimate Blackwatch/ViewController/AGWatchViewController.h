@@ -1,5 +1,5 @@
 //
-//  AGViewController.h
+//  AGWatchViewController.h
 //  Ultimate Blackwatch
 //
 //  Created by Arvid Gerstmann on 25/05/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AGRootViewController : UIViewController
+@interface AGWatchViewController : UIViewController
 
 @end

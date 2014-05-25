@@ -7,17 +7,30 @@
 //
 
 #import "AGAppDelegate.h"
+#import "AGRootViewController.h"
+#import "AGWatchViewController.h"
+#import "AGHelper.h"
+#import "AGNavigationBar.h"
 
 @implementation AGAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
+    AGWatchViewController *wvc = [[AGWatchViewController alloc] init];
+    AGRootViewController *rvc = [[AGRootViewController alloc] initWithRootViewController:wvc];
+    rvc.statusBarStyle = UIStatusBarStyleLightContent;
+    rvc.navigationBar.statusBarColor = [UIColor blackColor];
+    rvc.navigationBar.tintColor = [AGHelper darkColor];
+    rvc.navigationBar.attributedText = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"countdown", nil)
+                                                                       attributes:@{NSForegroundColorAttributeName : [AGHelper brightColor]}];
+
+    self.window.rootViewController = rvc;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

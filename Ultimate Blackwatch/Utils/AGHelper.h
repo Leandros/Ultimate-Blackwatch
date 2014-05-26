@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define RADIANS(x) (M_PI * (x) / 180.0)
+
 @interface AGHelper : NSObject
 
 #pragma mark - Colors -

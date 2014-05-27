@@ -21,6 +21,7 @@
 
 #pragma mark - Properties -
 @property (nonatomic, assign) BOOL timerRunning;
+@property (nonatomic, strong) NSTimer *currentTimer;
 @property (nonatomic, assign) NSInteger seconds;
 @property (nonatomic, assign) NSInteger minutes;
 
@@ -67,7 +68,13 @@
 #pragma mark Actions -
 - (IBAction)startAction:(id)sender {
     if (!self.timerRunning) {
-        [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countDown:) userInfo:nil repeats:YES];
+        self.timerRunning = YES;
+        self.currentTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countDown:) userInfo:nil repeats:YES];
+        [self.startButton setTitle:NSLocalizedString(@"stop", nil) forState:UIControlStateNormal];
+    } else {
+        self.timerRunning = NO;
+        [self.currentTimer invalidate];
+        [self.startButton setTitle:NSLocalizedString(@"start", nil) forState:UIControlStateNormal];
     }
 }
 
@@ -128,6 +135,13 @@
 - (void)displayMinutes:(NSInteger)minutes seconds:(NSInteger)seconds {
     [self displaySeconds:seconds - (60 * minutes)];
     [self displayMinutes:minutes];
+
+    NSString *hoursStr = [NSString stringWithFormat:@"00"];
+    NSString *minutesStr = [NSString stringWithFormat:@"%02zd", minutes];
+    NSString *secondsStr = [NSString stringWithFormat:@"%02zd", seconds];
+    NSString *millisecondsStr = [NSString stringWithFormat:@"00"];
+    NSString *fullStr = [NSString stringWithFormat:@"%@:%@:%@.%@", hoursStr, minutesStr, secondsStr, millisecondsStr];
+    self.timeLabel.text = fullStr;
 }
 
 - (void)displaySeconds:(NSInteger)seconds {

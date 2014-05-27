@@ -10,11 +10,24 @@
 #import "AGHelper.h"
 
 @interface AGWatchViewController ()
+
+#pragma mark - Outlets -
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
+
 @property (weak, nonatomic) IBOutlet UIImageView *watchHandSmall;
 @property (weak, nonatomic) IBOutlet UIImageView *watchHandBig;
 
+
+#pragma mark - Properties -
+@property (nonatomic, assign) BOOL timerRunning;
 @property (nonatomic, assign) NSInteger seconds;
 @property (nonatomic, assign) NSInteger minutes;
+
+
+#pragma mark - Actions -
+- (IBAction)startAction:(id)sender;
+
 @end
 
 @implementation AGWatchViewController
@@ -22,6 +35,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        self.timerRunning = NO;
         self.seconds = 0;
         self.minutes = 0;
     }
@@ -32,9 +46,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    // Setup.
     [self setupSecondsTimer];
     [self setupMinutesTimer];
-    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+    [self.startButton setTitle:NSLocalizedString(@"start", nil) forState:UIControlStateNormal];
+
+    // Set Countdown.
+    self.minutes = 1;
+    self.seconds = 10;
+    [self displayMinutes:self.minutes seconds:self.seconds];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,7 +62,36 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)timerFired:(NSTimer *)timer {
+
+#pragma mark -
+#pragma mark Actions -
+- (IBAction)startAction:(id)sender {
+    if (!self.timerRunning) {
+        [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countDown:) userInfo:nil repeats:YES];
+    }
+}
+
+
+#pragma mark -
+#pragma mark Timer -
+- (void)countDown:(NSTimer *)timer {
+    if (self.seconds == 0 && self.minutes == 0) {
+        [timer invalidate];
+        self.timerRunning = NO;
+        return;
+    }
+
+    if (self.seconds > 0) {
+        self.seconds--;
+    } else {
+        self.seconds = 59;
+        self.minutes--;
+    }
+
+    [self displayMinutes:self.minutes seconds:self.seconds];
+}
+
+- (void)countUp:(NSTimer *)timer {
     if (self.seconds < 60) {
         self.seconds++;
     } else {
@@ -50,10 +99,7 @@
         self.minutes++;
     }
 
-    [self displaySeconds:self.seconds - (60 * self.minutes)];
-    if (self.minutes != 0) {
-        [self displayMinutes:self.minutes];
-    }
+    [self displayMinutes:self.minutes seconds:self.seconds];
 }
 
 
@@ -77,6 +123,11 @@
 
     self.watchHandSmall.layer.anchorPoint = anchorInView;
     self.watchHandSmall.frame = originalFrame;
+}
+
+- (void)displayMinutes:(NSInteger)minutes seconds:(NSInteger)seconds {
+    [self displaySeconds:seconds - (60 * minutes)];
+    [self displayMinutes:minutes];
 }
 
 - (void)displaySeconds:(NSInteger)seconds {

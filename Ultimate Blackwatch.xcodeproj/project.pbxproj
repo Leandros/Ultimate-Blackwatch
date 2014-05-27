@@ -456,6 +456,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Ultimate Blackwatch/Ultimate Blackwatch-Prefix.pch";
 				INFOPLIST_FILE = "Ultimate Blackwatch/Ultimate Blackwatch-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -469,6 +470,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Ultimate Blackwatch/Ultimate Blackwatch-Prefix.pch";
 				INFOPLIST_FILE = "Ultimate Blackwatch/Ultimate Blackwatch-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

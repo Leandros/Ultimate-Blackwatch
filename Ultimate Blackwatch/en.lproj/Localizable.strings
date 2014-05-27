@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Ultimate Blackwatch
+
+  Created by Arvid Gerstmann on 27/05/14.
+  Copyright (c) 2014 Arvid Gerstmann. All rights reserved.
+*/
+
+"countdown" = "Countdown";
+"start" = "Start";
+"stop" = "Stop";

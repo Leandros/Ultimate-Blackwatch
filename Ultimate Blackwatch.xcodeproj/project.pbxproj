@@ -27,6 +27,7 @@
 		0CEB85161932719A0052BDEC /* AGNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CEB85151932719A0052BDEC /* AGNavigationBar.m */; };
 		0CEB8519193348770052BDEC /* bottom_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CEB8517193348770052BDEC /* bottom_white.png */; };
 		0CEB851A193348770052BDEC /* head_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CEB8518193348770052BDEC /* head_black.png */; };
+		0CEB851F1934DFB50052BDEC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0CEB85211934DFB50052BDEC /* Localizable.strings */; };
 		5D97A541A09BF332792E3D39 /* watch_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D97A396842BB80675CA94E9 /* watch_black.png */; };
 		5D97A6368740D0B79AD8025E /* watch_hand_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D97A5716F666198DCE0FF74 /* watch_hand_small.png */; };
 		5D97A8209CE900D58AF6470E /* watch_hand_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D97A77FC3DFE503EF96592F /* watch_hand_big.png */; };
@@ -72,6 +73,10 @@
 		0CEB85151932719A0052BDEC /* AGNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGNavigationBar.m; sourceTree = "<group>"; };
 		0CEB8517193348770052BDEC /* bottom_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_white.png; sourceTree = "<group>"; };
 		0CEB8518193348770052BDEC /* head_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head_black.png; sourceTree = "<group>"; };
+		0CEB851B1934DF980052BDEC /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0CEB851C1934DF980052BDEC /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0CEB85201934DFB50052BDEC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0CEB85221934DFB80052BDEC /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5D97A396842BB80675CA94E9 /* watch_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = watch_black.png; sourceTree = "<group>"; };
 		5D97A5716F666198DCE0FF74 /* watch_hand_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = watch_hand_small.png; sourceTree = "<group>"; };
 		5D97A77FC3DFE503EF96592F /* watch_hand_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = watch_hand_big.png; sourceTree = "<group>"; };
@@ -154,6 +159,7 @@
 				0CEB84C919320DC60052BDEC /* InfoPlist.strings */,
 				0CEB84CC19320DC60052BDEC /* main.m */,
 				0CEB84CE19320DC60052BDEC /* Ultimate Blackwatch-Prefix.pch */,
+				0CEB85211934DFB50052BDEC /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -287,6 +293,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 0CEB84B419320DC60052BDEC;
 			productRefGroup = 0CEB84BE19320DC60052BDEC /* Products */;
@@ -308,6 +315,7 @@
 				0CEB8519193348770052BDEC /* bottom_white.png in Resources */,
 				0CEB8500193218770052BDEC /* AGWatchViewController.xib in Resources */,
 				0CEB84CB19320DC60052BDEC /* InfoPlist.strings in Resources */,
+				0CEB851F1934DFB50052BDEC /* Localizable.strings in Resources */,
 				5D97A8209CE900D58AF6470E /* watch_hand_big.png in Resources */,
 				5D97A541A09BF332792E3D39 /* watch_black.png in Resources */,
 				5D97A6368740D0B79AD8025E /* watch_hand_small.png in Resources */,
@@ -363,6 +371,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0CEB84CA19320DC60052BDEC /* en */,
+				0CEB851B1934DF980052BDEC /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -371,8 +380,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				0CEB84E919320DC60052BDEC /* en */,
+				0CEB851C1934DF980052BDEC /* de */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0CEB85211934DFB50052BDEC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0CEB85201934DFB50052BDEC /* en */,
+				0CEB85221934DFB80052BDEC /* de */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

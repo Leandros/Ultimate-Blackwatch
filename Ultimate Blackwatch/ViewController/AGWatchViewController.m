@@ -22,8 +22,9 @@
 #pragma mark - Properties -
 @property (nonatomic, assign) BOOL timerRunning;
 @property (nonatomic, strong) NSTimer *currentTimer;
-@property (nonatomic, assign) NSInteger seconds;
 @property (nonatomic, assign) NSInteger minutes;
+@property (nonatomic, assign) NSInteger seconds;
+@property (nonatomic, assign) NSInteger milliseconds;
 
 
 #pragma mark - Actions -
@@ -37,8 +38,9 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.timerRunning = NO;
-        self.seconds = 0;
         self.minutes = 0;
+        self.seconds = 0;
+        self.milliseconds = 0;
     }
 
     return self;
@@ -55,7 +57,8 @@
     // Set Countdown.
     self.minutes = 1;
     self.seconds = 10;
-    [self displayMinutes:self.minutes seconds:self.seconds];
+    self.milliseconds = 0;
+    [self displayMinutes:self.minutes seconds:self.seconds milliseconds:self.milliseconds];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,7 +72,7 @@
 - (IBAction)startAction:(id)sender {
     if (!self.timerRunning) {
         self.timerRunning = YES;
-        self.currentTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countDown:) userInfo:nil repeats:YES];
+        self.currentTimer = [NSTimer scheduledTimerWithTimeInterval:0.001 target:self selector:@selector(countDown:) userInfo:nil repeats:YES];
         [self.startButton setTitle:NSLocalizedString(@"stop", nil) forState:UIControlStateNormal];
     } else {
         self.timerRunning = NO;
@@ -88,14 +91,19 @@
         return;
     }
 
-    if (self.seconds > 0) {
-        self.seconds--;
+    if (self.milliseconds > 0) {
+        self.milliseconds--;
     } else {
-        self.seconds = 59;
-        self.minutes--;
+        self.milliseconds = 999;
+        if (self.seconds > 0) {
+            self.seconds--;
+        } else {
+            self.seconds = 59;
+            self.minutes--;
+        }
     }
 
-    [self displayMinutes:self.minutes seconds:self.seconds];
+    [self displayMinutes:self.minutes seconds:self.seconds milliseconds:self.milliseconds];
 }
 
 - (void)countUp:(NSTimer *)timer {
@@ -106,7 +114,7 @@
         self.minutes++;
     }
 
-    [self displayMinutes:self.minutes seconds:self.seconds];
+    [self displayMinutes:self.minutes seconds:self.seconds milliseconds:self.milliseconds];
 }
 
 
@@ -132,20 +140,21 @@
     self.watchHandSmall.frame = originalFrame;
 }
 
-- (void)displayMinutes:(NSInteger)minutes seconds:(NSInteger)seconds {
-    [self displaySeconds:seconds - (60 * minutes)];
+- (void)displayMinutes:(NSInteger)minutes seconds:(NSInteger)seconds milliseconds:(NSInteger)milliseconds {
+    [self displaySeconds:seconds - (60 * minutes) milliseconds:milliseconds];
     [self displayMinutes:minutes];
 
     NSString *hoursStr = [NSString stringWithFormat:@"00"];
     NSString *minutesStr = [NSString stringWithFormat:@"%02zd", minutes];
     NSString *secondsStr = [NSString stringWithFormat:@"%02zd", seconds];
-    NSString *millisecondsStr = [NSString stringWithFormat:@"00"];
+    NSString *millisecondsStr = [NSString stringWithFormat:@"%03zd", milliseconds];
     NSString *fullStr = [NSString stringWithFormat:@"%@:%@:%@.%@", hoursStr, minutesStr, secondsStr, millisecondsStr];
     self.timeLabel.text = fullStr;
 }
 
-- (void)displaySeconds:(NSInteger)seconds {
-    self.watchHandBig.transform = CGAffineTransformMakeRotation(RADIANS((360.0f / 60.0f) * seconds));
+- (void)displaySeconds:(NSInteger)seconds milliseconds:(NSInteger)milliseconds {
+    NSInteger radian = (360.0f / 60.0f) * seconds + (((360.0f / 60.0f) / 1000.0f) * milliseconds);
+    self.watchHandBig.transform = CGAffineTransformMakeRotation(RADIANS(radian));
 }
 
 - (void)displayMinutes:(NSInteger)minutes {
